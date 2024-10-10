@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
 import './App.css';
+import CustomerAdd from './CustomerAdd';
+import { Provider }  from 'react-redux'
+import { Store} from './Store'
+import CustomerView from './CustomerView';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Provider store={Store} >
+      <div className="App">
+      <h1>Name List Manager</h1>
+      <CustomerAdd />
+      <CustomerView/>
     </div>
+    </Provider>
+    
   );
-}
+} 
 
 export default App;
